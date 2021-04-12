@@ -9,6 +9,8 @@ $pemainBola = [
     "Sadio Mane"            => "Liverpool",
     "Zlatan Ibrahimovic"    => "Ac Milan"
 ];
+
+
 function tampilkan()
 {
     global $pemainBola;

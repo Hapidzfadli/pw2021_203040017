@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    box-sizing: 0;
+}
+
+.main-container {
+    display: flex;
+}
+.sidebar-left {
+    display: flex;
+    margin-top: 20px;
+}
+.sidebar-left .list-group {
+    width: 200px;
+}
+.side-content {
+    flex-direction: row;
+    display: flex;
+    margin-left: 30px;
+    flex-wrap: wrap;
+    width: 50%;
+}
+form {
+    width: 95%;
+}

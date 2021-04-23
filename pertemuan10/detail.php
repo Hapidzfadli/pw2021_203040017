@@ -20,6 +20,7 @@ $m = query("SELECT * FROM mahasiswa WHERE id = $id");
 
 <body>
     <h3>Detail Mahasiswa</h3>
+
     <ul>
         <li><img src="<?= $m['gambar']; ?>" width="150" alt=""></li>
         <li>NRP: <?= $m['nrp']; ?></li>

@@ -33,14 +33,6 @@ if (isset($_POST['login'])) {
 
 // registrasi
 require 'registrasi.php';
-
-
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>

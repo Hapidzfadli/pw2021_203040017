@@ -1,13 +1,11 @@
-<?php 
+<?php
 require 'function.php';
 
-$mahasiswa = query("SELECT * FROM mahasiswa"); // diurutkan berdasarkan nama ASC dari yang terkecil dan DESC dari yang terbesar
-// $mahasiswa = query("SELECT * FROM mahasiswa WHERE nrp 123454321");(tampil secara spesifik)
+$mahasiswa = query("SELECT * FROM mahasiswa");
 
-// tombol cari di klik
-
-if( isset($_POST["cari"])){
-    $mahasiswa = cari($_POST["keyword"]);
+//ketika tombol cari di klik
+if (isset($_POST['cari'])) {
+    $mahasiswa = cari($_POST['keyword']);
 }
 
 
@@ -16,54 +14,57 @@ if( isset($_POST["cari"])){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Daftar Mahasiswa</title>
 </head>
+
 <body>
+    <h3>Daftar Mahasiswa</h3>
+    <a href="tambah.php">Tambah Data Mahasiswa</a>
+    <br>
+    <br>
+    <form action="" method="POST">
+        <input type="text" name="keyword" id="keyword" size="40" placeholder="masukan keyword mahasiswa" autocomplete="off" autofocus>
+        <button type="submit" name="cari">cari</button>
+    </form>
+    <br>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>No.</th>
+            <th>Gambar</th>
+            <th>Nama</th>
+            <th>Aksi</th>
+        </tr>
 
-<h1>Daftar Mahasiswa</h1>
-<a href="tambah.php">Tambah Data Mahasiswa</a>
-<br><br>
+        <?php if (empty($mahasiswa)) : ?>
+            <tr>
+                <td colspan="4">
+                    <p style="color: red; font-style:italic;">data mahasiswa tidak di temukan</p>
+                </td>
+            </tr>
+        <?php endif; ?>
 
-<form action="" method="post">
-    <input type="text" name="keyword" size="40" autofocus placeholder="masukan keyword pecarian.." autocomplete="off">
-    <button type="submit" name="cari">Cari...</button>
-   
-</form>
-<br> <br>
-<table border="1" cellpadding='10' cellspacing="0">
 
-    <tr>
-        <th>No.</th>
-        <th>Aksi</th>
-        <th>Gambar</th>
-        <th>NRP</th>
-        <th>Nama</th>
-        <th>Email</th>
-        <th>Jurusan</th>
-    </tr>
-    <?php $i = 1;?>
-    
-    <?php foreach ($mahasiswa as $row) :?>
-    
-    <tr>
-        <td><?= $i; ?></td>
-        <td>
-            <a href="ubah.php?id=<?= $row["id"];?>">Ubah</a> |
-            <a href="hapus.php?id=<?= $row["id"];?> " onclick="return confirm('Yakin?');">Hapus</a>
-        </td>
-        <td><img src="img/<?= $row["gambar"]; ?>"  width="50"></td>
-        <td><?= $row["nrp"]; ?></td>
-        <td><?= $row["nama"]; ?></td>
-        <td><?= $row["email"]; ?></td>
-        <td><?= $row["jurusan"]; ?></td>
-    </tr>
-    <?php $i++;?>
-    
-    <?php endforeach; ?>
-    
-</table> 
+
+        <?php $i = 1; ?>
+        <?php foreach ($mahasiswa as $row) : ?>
+            <tr>
+                <td><?= $i; ?></td>
+
+                <td><img src="<?= $row["gambar"]; ?>" width="50"></td>
+                <td><?= $row["nama"]; ?></td>
+                <td>
+                    <a href="detail.php?id=<?= $row["id"]; ?>">Lihat Detail</a>
+                </td>
+            </tr>
+            <?php $i++; ?>
+
+        <?php endforeach; ?>
+    </table>
 </body>
+
 </html>

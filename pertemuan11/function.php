@@ -1,22 +1,31 @@
-<?php 
+<?php
+//koneksi ke DB & pilih database
+function koneksi()
+{
+    $conn = mysqli_connect('localhost', 'root', '', 'pw_203040017');
+    return $conn;
+}
 
-// koneksi ke database
-$db = mysqli_connect("localhost", "root", "","phpdasar");
+function query($query)
+{
+    $conn =  koneksi();
+    $result = mysqli_query($conn, $query);
 
-function query($query) {
-    global $db;
-    $result = mysqli_query($db, $query);
+    //jika hasilnnya hanya satu data
+    if (mysqli_num_rows($result) == 1) {
+        return mysqli_fetch_assoc($result);
+    }
     $rows = [];
-    while( $row = mysqli_fetch_assoc($result)){
+    while ($row = mysqli_fetch_assoc($result)) {
         $rows[] = $row;
     }
     return $rows;
-
 }
 
- function tambah($data){
+function tambah($data)
+{
     //Ambil data dari elemen dalam form
-    global $db;
+    $conn =  koneksi();
     $nrp = htmlspecialchars($data["nrp"]);
     $nama = htmlspecialchars($data["nama"]);
     $email = htmlspecialchars($data["email"]);
@@ -30,52 +39,52 @@ function query($query) {
                 ('', '$nrp','$nama','$email','$jurusan','$gambar')
                 ";
 
-    mysqli_query($db, $query);
-    return mysqli_affected_rows($db);
-
- }
-
-function hapus($id){
-    global $db;
-    mysqli_query($db, "DELETE FROM mahasiswa WHERE id = $id");
-    return mysqli_affected_rows($db);
-
+    mysqli_query($conn, $query) or die(mysqli_error($conn));
+    return mysqli_affected_rows($conn);
 }
-
-function ubah($data){
-
-    global $db;
-    $id = $data["id"];
+function hapus($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id") or die(mysqli_error($conn));
+    return mysqli_affected_rows($conn);
+}
+function ubah($data)
+{
+    //Ambil data dari elemen dalam form
+    $conn =  koneksi();
+    $id = $data['id'];
     $nrp = htmlspecialchars($data["nrp"]);
     $nama = htmlspecialchars($data["nama"]);
     $email = htmlspecialchars($data["email"]);
     $jurusan = htmlspecialchars($data["jurusan"]);
     $gambar = htmlspecialchars($data["gambar"]);
 
+
+    //Query insert data
     $query = "UPDATE mahasiswa SET
-            nrp = '$nrp',
-            nama = '$nama',
-            email = '$email',
-            jurusan = '$jurusan',
-            gambar = '$gambar'
+                nrp = '$nrp',
+                nama = '$nama',
+                email = '$email',
+                jurusan = '$jurusan',
+                gambar = '$gambar'
+                WHERE id = $id";
 
-        WHERE id = $id
-    ";
-    mysqli_query($db, $query);
-
-    return mysqli_affected_rows($db);
+    mysqli_query($conn, $query) or die(mysqli_error($conn));
+    return mysqli_affected_rows($conn);
 }
 
-
-function cari($keyword) {
+function cari($keyword)
+{
+    $conn = koneksi();
     $query = "SELECT * FROM mahasiswa 
-                WHERE
-            nama LIKE '%$keyword%' OR
-            nrp LIKE '%$keyword%' OR
-            jurusan LIKE '%$keyword%' OR
-            email LIKE '%$keyword%'";
+    WHERE nama LIKE '%$keyword%' OR
+    nrp LIKE '%$keyword%'";
 
-            return query(($query));
+    $result = mysqli_query($conn, $query);
+
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
 }
-
-?>

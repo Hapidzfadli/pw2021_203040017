@@ -55,10 +55,10 @@ $barang = query("SELECT * FROM toko_item");
         </div>
     </header>
     <main>
-        <div class="container d-flex">
+        <div class="container ct-card d-flex">
 
             <?php foreach ($barang as $rows) : ?>
-                <div class="card" style="width: 14rem; margin-top: 20px; margin-right: 10px;">
+                <div class="card" style="width: 13rem; margin-top: 20px; margin-right: 10px;">
                     <img src="<?= $rows["picture"]; ?>" class="card-img-top" alt="<?= $rows["picture"]; ?>">
                     <div class="card-body">
                         <h5 class="card-title"><?= $rows["name"]; ?></h5>

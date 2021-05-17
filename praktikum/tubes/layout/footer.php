@@ -1,4 +1,64 @@
-<div>
+<div class="footer mt-4 d-flex p-5" id="footer">
+    <div class="row">
+        <div class="col d-flex col-foot d-flex justify-content-around">
+            <div class="about-foot">
+                <div class="about">
+                    <div class="title-about">
+                        <h3>ZadeSky</h3>
+                    </div>
+                    <ul>
+                        <li>Tentang ZadeSky</li>
+                        <li>Blog</li>
+                        <li>Disclaimer</li>
+                        <li>Mitra Blog</li>
+                        <li>Panduan Seller</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bantuan">
+                <div class="title-bantuan">
+                    <h3>Bantuan dan Panduan</h3>
+                </div>
+                <ul>
+                    <li>ZadeSky Care</li>
+                    <li>Kebijakan Privasi</li>
+                    <li>Syarat dan Ketentuan</li>
+                </ul>
+            </div>
+            <div class="sosmed">
+                <div class="ikuti">
+                    <h3>Ikuti Kami</h3>
+                </div>
+                <ul d-flex>
+                    <li><a href=""> <img src="http://localhost/pw2021_203040017/praktikum/tubes/asset/sosmed/fb.svg" alt=""> Facebook</a></li>
+                    <li><a href=""> <img src="http://localhost/pw2021_203040017/praktikum/tubes/asset/sosmed/twt.svg" alt=""> Twitter</li>
+                    <li><a href=""> <img src="http://localhost/pw2021_203040017/praktikum/tubes/asset/sosmed/ig.svg" alt=""> Instagram</li>
+                    <li><a href=""> <img src="http://localhost/pw2021_203040017/praktikum/tubes/asset/sosmed/ptr.svg" alt=""> Pinters</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <div class="copyright"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

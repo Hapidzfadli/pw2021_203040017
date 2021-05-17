@@ -55,7 +55,7 @@ $barang = query("SELECT * FROM toko_item");
         </div>
     </header>
     <main>
-        <div class="container d-flex">
+        <div class="container ct-card d-flex">
 
             <?php foreach ($barang as $rows) : ?>
                 <div class="card" style="width: 14rem; margin-top: 20px; margin-right: 10px;">

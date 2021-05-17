@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+* {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+:root {
+    --box-shadow: box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.096) 0px 15px 12px;
+    font-family: 'Nunito Sans', sans-serif;
+    width: 100%;
+}
+.footer .row {
+    width: 100%;
+}
+.footer .row .col {
+    max-width: 80%;
+}
+.title-about h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+.about ul li, .bantuan ul li, .sosmed ul li {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(69, 121, 118);
+    cursor: pointer;
+    margin-top: 5px;
+}
+.about ul li:hover, .bantuan ul li:hover, .sosmed ul li a:hover {
+    color: olivedrab;
+}
+.bantuan {
+    margin-left: 10px;
+}
+.title-bantuan h3, .ikuti h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+.sosmed ul li a{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(69, 121, 118);
+    cursor: pointer;
+}
+
+

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&display=swap');
 
 .navbar {
     box-shadow: rgba(33, 35, 38, 0.178) 0px 10px 10px -10px;
@@ -159,9 +160,13 @@
     background-size: 28px !important;
 }
 .navbar-nav, .login {
-    margin-left: 20px;
+    margin-left: 10px;
 }
-
+.daftar a button {
+    width: 100px;
+    background-color: #a6a6a6;
+    border-color: #a6a6a6;
+}
 .login a button {
     width: 100px;
     background-color: #a6a6a6;
@@ -175,6 +180,40 @@
 }
 .carousel-control-icon {
     background-color: white;
+}
+.category {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+.title-category h3 {
+    font-weight: 800;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.list-category {
+    flex-wrap: wrap;
+}
+.list-category a {
+    color: black;
+    text-decoration: none;
+}
+.list-category .card {
+    width: 7.68em;
+    height: 150px;
+}
+.list-category .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+.list-category .card-img-top {
+    margin: auto;
+    width: 80px;
+}
+.list-category .card-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.25rem;
+    max-height: 2.5rem;
+    word-break: break-word;
 }
 @media (min-width: 576px) {
     .navbar-brand {

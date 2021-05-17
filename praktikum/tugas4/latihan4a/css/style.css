@@ -6,7 +6,9 @@ nav {
     height: 32px;
     font-size: 14px;
 }
-
+.ct-card {
+    flex-wrap: wrap;
+}
 .card {
     text-align: left;
 }

@@ -1,0 +1,48 @@
+.barang {
+    flex-wrap: wrap;
+}
+.barang a {
+    font-family: 'Nunito Sans', sans-serif;
+    text-decoration: none;
+    color: black;
+}
+.barang .card-title {
+    font-size: 0.83rem;
+    font-weight: normal;
+}
+.rekomendasi {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+.barang .harga {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #e45656;
+    margin-bottom: 5px;
+}
+.barang .terjual {
+    font-size: 0.6rem;
+    color: rgba(0,0,0,.54);
+    margin-top: 5px;
+}
+.barang .lokasi {
+    text-align: right;
+    font-size: 0.82rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: rgb(65, 60, 60);
+}
+.barang .card {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+.barang .card:hover {
+    margin-top: -2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.card-img-top {
+    height: 230px;
+}
+.card-body {
+    padding: 0.7rem;
+}

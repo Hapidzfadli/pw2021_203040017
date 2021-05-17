@@ -61,7 +61,7 @@ $result = mysqli_query($conn, "SELECT * FROM toko_item");
         </div>
     </header>
     <main>
-        <div class="container d-flex">
+        <div class="container ct-card d-flex">
 
             <?php while ($rows = mysqli_fetch_assoc($result)) : ?>
                 <div class="card" style="width: 14rem; margin-top: 20px; margin-right: 10px;">

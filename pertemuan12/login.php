@@ -3,23 +3,25 @@
 Hapid Fadli
 203040017
 https://github.com/Hapidzfadli/pw2021_203040017
-pertemuan 13 - 13 Mei 2021
-mempelajari mengenai live search & upload gambar PHP 
+pertemuan 12 - 6 Mei 2021
+mempelajari mengenai login dan registrasi PHP 
 */
 ?>
 <?php
+session_start();
+
+if (isset($_SESSION['login'])) {
+  header("Location: index.php");
+  exit;
+}
+
 require 'functions.php';
 
-if (isset($_POST['registrasi'])) {
-  if (registrasi($_POST) > 0) {
-    echo "<script>
-            alert ('userbaru berhasil ditambahkan silahkan login');
-            document.location.href = 'login.php';
-          </script>";
-  } else {
-    echo "user gagal ditambahkan";
-  }
+// ketika tombol login ditekan
+if (isset($_POST['login'])) {
+  $login = login($_POST);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,11 +30,14 @@ if (isset($_POST['registrasi'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registrasi</title>
+  <title>Login Form</title>
 </head>
 
 <body>
-  <h3>Form Registrasi</h3>
+  <h3>Form Login </h3>
+  <?php if (isset($login['error'])) : ?>
+    <p style="color: red; font-style: italic;"><?= $login['pesan']; ?></p>
+  <?php endif; ?>
   <form action="" method="POST">
     <ul>
       <li>
@@ -44,20 +49,18 @@ if (isset($_POST['registrasi'])) {
       <li>
         <label>
           Password :
-          <input type="password" name="password1" required>
+          <input type="password" name="password" required>
         </label>
       </li>
       <li>
-        <label>
-          Konfirmasi Password :
-          <input type="password" name="password2" required>
-        </label>
+        <button type="submit" name="login">Login</button>
       </li>
       <li>
-        <button type="submit" name="registrasi">Registrasi</button>
+        <a href="registrasi.php">Tambah User Baru</a>
       </li>
     </ul>
   </form>
+
 
 </body>
 

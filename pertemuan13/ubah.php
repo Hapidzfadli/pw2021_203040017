@@ -1,82 +1,95 @@
-<?php 
-require 'function.php';
+<?php
+/*
+Hapid Fadli
+203040017
+https://github.com/Hapidzfadli/pw2021_203040017
+pertemuan 13 - 13 Mei 2021
+mempelajari mengenai live search & upload gambar PHP 
+*/
+?>
+<?php
+session_start();
 
-// ambil data id di url
+if (!isset($_SESSION['login'])) {
+  header("Location: login.php");
+  exit;
+}
+require 'functions.php';
+
+// jika tidak ada id di url
+if (!isset($_GET['id'])) {
+  header("Location: index.php");
+  exit;
+}
+
+// ambil id dari URl
 $id = $_GET['id'];
 
-// query data mahasiswa berdasarkan id
+// query mahasiswa berdasarkan id
+$mahasiswa = query("SELECT * FROM mahasiswa where id = $id");
 
-$mhs = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
+// cek apakah tombol sudah ditekan atau belum
+if (isset($_POST["ubah"])) {
 
 
-
-// cek apakah tombol submit sudah di tekan
-if (isset($_POST["submit"])) {
-    
-
-    //cek apakah data berhasil di ubah atau tidak
-    if(ubah($_POST) > 0 ){
-        echo "
+  // cek apakah data berhasil di tambahkan atau tidak
+  if (ubah($_POST) > 0) {
+    echo "
             <script>
-                alert('data berhasil di ubah')
+                alert('data berhasil diubah')
                 document.location.href = 'index.php';
             </script>
         ";
-    } else {
-        echo "
-        <script>
-            alert('data berhasil di ubah')
-            document.location.href = 'index.php';
-        </script>
-        ";
-    }
+  } else {
+    echo "alert('data gagal diubah';";
+  }
+}
 
-};
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubah Data</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubah Data Mahasiswa</title>
 </head>
+
 <body>
-
-<h1>Ubah Data Mahasiswa</h1>
-    <form action="" method="POST" enctype="multipart/form-data">       
-        
-    <input type="hidden" name="id" value="<?= $mhs["id"]; ?>">
-    <input type="hidden" name="gambarLama" value="<?= $mhs["gambar"]; ?>">
+  <h1>Ubah data mahasiswa</h1>
+  <form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= $mahasiswa["id"]; ?>">
     <ul>
-        <li>
-            <label for="nrp">NRP:</label>
-            <input type="text" name="nrp" id="nrp" required value="<?= $mhs["nrp"]; ?>">
-        </li>
-        <li>
-            <label for="nama">Nama:</label>
-            <input type="text" name="nama" id="nama" required value="<?= $mhs["nama"]; ?>">
-        </li>
-        <li>
-            <label for="email">Email:</label>
-            <input type="text" name="email" id="email" required value="<?= $mhs["email"]; ?>">
-        </li>
-        <li>
-            <label for="jurusan">Jurusan:</label>
-            <input type="text" name="jurusan" id="jurusan" required value="<?= $mhs["jurusan"]; ?>">
-        </li>
-        <li>
-            <label for="gambar">Gambar:</label>
-            <img src="img/<?= $mhs['gambar']; ?>" width="30">
-            <input type="file" name="gambar" id="gambar">
-        </li>
-        <li>
-        <button type="submit" name="submit">Ubah Data</button>
-        </li>
+      <li>
+        <label for="nama">Nama : </label>
+        <input type="text" name="nama" id="nama" autofocus required value="<?= $mahasiswa["nama"]; ?>">
+      </li>
+      <li>
+        <label for="nrp">NRP : </label>
+        <input type="text" name="nrp" id="nrp" required value="<?= $mahasiswa["nrp"]; ?>">
+      </li>
+      <li>
+        <label for="email">Email : </label>
+        <input type="text" name="email" id="email" required value="<?= $mahasiswa["email"]; ?>">
+      </li>
+      <li>
+        <input type="hidden" name="gambar_lama" value="<?= $mahasiswa["gambar"]; ?>">
+        <label for="jurusan">Jurusan : </label>
+        <input type="text" name="jurusan" id="jurusan" required value="<?= $mahasiswa["jurusan"]; ?>">
+      </li>
+      <li>
+        <label for="gambar">Gambar : </label>
+        <input type="file" name="gambar" class="gambar" onchange="previewImage()">
+        <img src="img/<?= $mahasiswa["gambar"]; ?>" alt="" width="120" style="display: block;" class="img-preview">
+      </li>
+      <li>
+        <button type="submit" name="ubah">Ubah Data</button>
+      </li>
     </ul>
+  </form>
 
-    </form>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

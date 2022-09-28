@@ -1,1 +1,25 @@
-<mxfile host="app.diagrams.net" modified="2022-09-28T05:51:50.631Z" agent="5.0 (Windows)" version="20.3.7" etag="kvIHaioCm93rBzTSHCRY" type="github"><diagram id="T_k49GK9x2ncM6QsF2Mx">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-09-28T05:56:46.568Z" agent="5.0 (Windows)" etag="zlioVkOSyOnE7xXNHxjc" version="20.3.7" type="github">
+  <diagram id="T_k49GK9x2ncM6QsF2Mx" name="Page-1">
+    <mxGraphModel dx="2062" dy="861" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tcfyaM42G6nNceNNQc_6-4" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tcfyaM42G6nNceNNQc_6-1" target="tcfyaM42G6nNceNNQc_6-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tcfyaM42G6nNceNNQc_6-1" value="pemintaan perawatan" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F5FF;" vertex="1" parent="1">
+          <mxGeometry x="340" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tcfyaM42G6nNceNNQc_6-5" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tcfyaM42G6nNceNNQc_6-2" target="tcfyaM42G6nNceNNQc_6-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tcfyaM42G6nNceNNQc_6-2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F5FF;" vertex="1" parent="1">
+          <mxGeometry x="340" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tcfyaM42G6nNceNNQc_6-3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F5FF;" vertex="1" parent="1">
+          <mxGeometry x="340" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
